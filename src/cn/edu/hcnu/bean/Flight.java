@@ -2,12 +2,22 @@ package cn.edu.hcnu.bean;
 
 public class Flight {
     private  String id;
+    private String flightId;
     private  String planeType;
-    private  String seatsNo;
-    private String totalSeatsNum;
+    private int currentSeatsNum;
     private  String  departureAirport;
     private  String destinationAirport;
     private  String departureTime;
+
+    public Flight(String id, String flightId, String planeType, int currentSeatsNum, String departureAirport, String destinationAirport, String departureTime) {
+        this.id = id;
+        this.flightId = flightId;
+        this.planeType = planeType;
+        this.currentSeatsNum = currentSeatsNum;
+        this.departureAirport = departureAirport;
+        this.destinationAirport = destinationAirport;
+        this.departureTime = departureTime;
+    }
 
     public String getId() {
         return id;
@@ -15,6 +25,14 @@ public class Flight {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getFlightId() {
+        return flightId;
+    }
+
+    public void setFlightId(String flightId) {
+        this.flightId = flightId;
     }
 
     public String getPlaneType() {
@@ -25,20 +43,12 @@ public class Flight {
         this.planeType = planeType;
     }
 
-    public String getSeatsNo() {
-        return seatsNo;
+    public int getCurrentSeatsNum() {
+        return currentSeatsNum;
     }
 
-    public void setSeatsNo(String seatsNo) {
-        this.seatsNo = seatsNo;
-    }
-
-    public String getTotalSeatsNum() {
-        return totalSeatsNum;
-    }
-
-    public void setTotalSeatsNum(String totalSeatsNum) {
-        this.totalSeatsNum = totalSeatsNum;
+    public void setCurrentSeatsNum(int currentSeatsNum) {
+        this.currentSeatsNum = currentSeatsNum;
     }
 
     public String getDepartureAirport() {
