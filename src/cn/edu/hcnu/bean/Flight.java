@@ -74,4 +74,16 @@ public class Flight {
     public void setDepartureTime(String departureTime) {
         this.departureTime = departureTime;
     }
+
+    @Override
+    public String toString() {
+        return "Flight{" +
+                ", 航班ID='" + flightId + '\'' +
+                ", 机型='" + planeType + '\'' +
+                ", 座位数=" + currentSeatsNum +
+                ", 起飞机场='" + departureAirport + '\'' +
+                ", 目的机场='" + destinationAirport + '\'' +
+                ",起飞时间='" + departureTime + '\'' +
+                '}';
+    }
 }

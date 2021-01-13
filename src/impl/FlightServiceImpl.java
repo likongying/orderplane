@@ -2,19 +2,28 @@ package impl;
 
 import cn.edu.hcnu.bean.Flight;
 import dao.IFlightDao;
+import dao.FlightDaoIml;
 
+import java.sql.SQLException;
 import java.util.Set;
 
-public class FlightDaoImI implements IFlightDao {
-
+public class
+FlightServiceImpl implements IFlightService {
+    IFlightDao iFlightDao;
+    public  FlightServiceImpl(){
+        iFlightDao=new FlightDaoIml();
+    }
     @Override
-    public void insertFlight(Flight flight) {
-        
+    public void insertFlight(Flight flight) throws SQLException {
+        iFlightDao.insertFlight(flight);
+        System.out.println("界面传来的航班信息:"+flight);
+
     }
 
+
     @Override
-    public Set<Flight> getAllFlights() {
-        return null;
+    public Set<Flight> getAllFlights() throws SQLException {
+        return iFlightDao.getAllFlights();
     }
 
     @Override
